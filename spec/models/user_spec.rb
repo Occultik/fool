@@ -97,15 +97,15 @@ describe User do
       @user.should respond_to(:encrypted_password)
     end
     
-     # it "should set the encrypted password" do
-     # @user.encrypted_password.should_not be_blank
-    #end
+     it "should set the encrypted password" do
+      @user.encrypted_password.should_not be_blank
+     end
     
     describe "has_password? method" do
         
-         #it "should be true if the passwords match" do
-         #  @user.has_password?(@attr[:password]).should be_true
-         #end
+         it "should be true if the passwords match" do
+           @user.has_password?(@attr[:password]).should be_true
+         end
 
          it "should be false if the passwords don't match" do
             @user.has_password?("invalid").should be_false
@@ -125,10 +125,10 @@ describe User do
         nonexistent_user.should be_nil
       end
 
-      #it "should return the user on email/password match" do
-      #  matching_user = User.authenticate(@attr[:email], @attr[:password])
-      #  matching_user.should == @user
-      #end
+      it "should return the user on email/password match" do
+        matching_user = User.authenticate(@attr[:email], @attr[:password])
+        matching_user.should == @user
+      end
     end
   end
   end
